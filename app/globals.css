@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font stacks — each design opts into one; the gallery uses sans. */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-pixel: var(--font-press-start), ui-monospace, monospace;
+  --font-vt: var(--font-vt323), ui-monospace, monospace;
+  --font-code: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  /* Gallery shell palette — deliberately neutral so the designs it frames
+     are the only things with a strong opinion. */
+  --color-shell-bg: #0b0c0f;
+  --color-shell-raised: #14161b;
+  --color-shell-line: #23262e;
+  --color-shell-text: #e8e9ec;
+  --color-shell-dim: #8d919c;
+  --color-shell-accent: #d8a13a;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--color-shell-bg);
+  color: var(--color-shell-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Visible, consistent focus ring across every design. */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Designs opt into pixel-perfect rendering for their SVG art. */
+.crisp {
+  shape-rendering: crispEdges;
+  image-rendering: pixelated;
+}
+
+/* Utility: hide scrollbars on panned surfaces without losing scrollability. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/**
+ * Print. The editorial, broadsheet and exhibition designs are built to look
+ * like paper, so they ought to survive being put on it: drop the floating
+ * chrome, flatten backgrounds to save ink, keep articles off page breaks, and
+ * spell out link destinations that a printed page can't be clicked to reach.
+ */
+@media print {
+  @page {
+    margin: 16mm;
+  }
+
+  nav[aria-label="Design navigation"],
+  .no-print {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  article,
+  section,
+  figure,
+  blockquote,
+  li {
+    break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  /* Destinations are invisible on paper unless printed alongside the text. */
+  main a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    word-break: break-all;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/**
+ * Inline destination links inside prose (the print-family designs especially)
+ * sit around 20px tall, well under a finger. On touch pointers only, pad them
+ * out to a 44px target without disturbing the typography on desktop.
+ */
+@media (pointer: coarse) {
+  a[href^="http"]:not(nav a):not([class*="rounded-full"]),
+  a[href^="mailto:"]:not(nav a) {
+    display: inline-block;
+    min-height: 44px;
+    line-height: 44px;
+  }
+}
