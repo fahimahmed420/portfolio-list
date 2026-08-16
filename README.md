@@ -1,110 +1,215 @@
-# Portfolio Designs
+# Portfolio List
 
-A collection of complete, reusable portfolio designs — twenty-one of them, all
-driven by a single shared content file, browsable from one gallery.
+A collection of **21 portfolio website designs**, all driven by a single
+shared content file. Browse them from one gallery, pick the one you like,
+edit one file, and it's yours.
 
-The point is reuse: a design here is a pure function of a `Profile` object. It
-never imports content directly and never hardcodes a name, a project or a link.
-Adopting a design means editing one file — see [PLACEHOLDER.md](PLACEHOLDER.md).
+Every design in this repo renders the exact same object — a `Profile`. No
+design imports content directly and no design hardcodes a name, a project,
+or a link. That's what makes "picking one" a content edit instead of a
+rewrite: swap `data/profile.ts` and all 21 designs update together.
 
-**All content in this repo is placeholder data for a fictional person.**
+**All content shown is placeholder data for a fictional person.** Nothing
+in this repo belongs to anyone real.
+
+## Live structure
+
+```
+/               the gallery — every design as a filterable card grid
+/d/<slug>       one design, full page
+```
 
 ## The designs
 
 ### Games and toys
 
-| Design | What it is |
-| --- | --- |
-| **Devopoly** | A pixel-art board game. Projects and skill groups sit on the perimeter as title deeds — click any tile, or roll the dice and let a token tour the board. Every lap past START pays out. All art is hand-drawn SVG bitmaps. |
-| **Character Sheet** | A tabletop RPG sheet on parchment. Skill groups become rolled attributes with modifiers, experience becomes an XP bar, projects become quests with objectives and loot. |
-| **Trading Cards** | A holo card set. You're the character card; projects are cards with a type inferred from the stack, rarity earned by depth, and four stat bars. Cards tilt under the cursor and can be drafted into a deck. |
-| **Skill Tree** | A radial talent tree. Each skill group is a branch, each skill a node lit by level — and selecting a node lists the projects that actually used it. |
-| **Field Guide** | A handheld creature-index device. Projects are specimens with types, stats and abilities; catch one to open the case study. |
-| **Claw Machine** | A working claw machine. Steer, drop, and pull a project out of the pit. A plain prize list sits underneath so nobody has to win to read anything. |
-| **Cartridge** | A 90s console boot menu — start game, load project, options, credits. Projects live on a shelf as labelled cartridges. |
-| **Arcade** | A coin-op cabinet: attract screen, marquee, stage-select grid, high-score table, and a control deck whose joystick and buttons actually drive the selection. |
-| **Inventory** | A block-game inventory screen. Projects sit in the item grid with rarity-coloured tooltips that follow the cursor, skills fill the toolbar, the résumé is a written book, and contact is a crafting recipe. |
-| **Open World** | A top-down city map with a HUD. Landmarks stand in for sections — office, café, safehouse, payphone — and each project is a mission marker with its own briefing. |
-| **The Table** | A casino table. Projects are betting spots stacked with chips weighted by what the work carries; placing a bet deals the project as a playing card. |
+| Design | Route | What it is |
+| --- | --- | --- |
+| **Devopoly** | `/d/devopoly` | A pixel-art board game where every property is part of the career. |
+| **Character Sheet** | `/d/rpg` | You are the playable character. Skills are stats, projects are quests. |
+| **Trading Cards** | `/d/cards` | Every project is a collectible card. Build a deck from the good ones. |
+| **Skill Tree** | `/d/skilltree` | A talent tree where every node you light up points at the work it built. |
+| **Field Guide** | `/d/fieldguide` | A creature index. Every project is a specimen you catch to read. |
+| **Claw Machine** | `/d/claw` | Your projects are prizes. Drive the claw and grab one. |
+| **Cartridge** | `/d/cartridge` | A 90s boot menu. Start game, load project, options, credits. |
+| **Arcade** | `/d/arcade` | Insert coin. Projects are stages, skills are the high-score table. |
 
 ### Interfaces and simulations
 
-| Design | What it is |
-| --- | --- |
-| **Desktop OS** | A fake desktop with a menu bar, live clock, icons and genuinely draggable windows that focus, stack and close. |
-| **Terminal** | Posts a BIOS, boots, then hands over a live prompt with a real command parser, Tab-completion, history and a `tree` of the whole profile. |
-| **Case Files** | A detective's corkboard. Projects are case folders with brief, evidence log, case notes and a stamped verdict. |
-| **Star Map** | Mission control. Projects orbit as planets, skills read as onboard systems at operational status, experience is the mission log. |
-| **Departures** | An airport split-flap board that clatters into place on load. Projects are flights with gates, times and statuses; selecting one prints a boarding pass. |
+| Design | Route | What it is |
+| --- | --- | --- |
+| **Desktop OS** | `/d/desktop` | A whole operating system. Projects open as windows you can drag. |
+| **Terminal** | `/d/terminal` | A portfolio you explore by typing — with a real command parser. |
+| **Case Files** | `/d/casefile` | Projects as cases to investigate. Evidence, notes, verdict. |
+| **Star Map** | `/d/mission` | You're mission commander. Projects are worlds on the chart. |
+| **Open World** | `/d/openworld` | A city map. Projects are missions, districts are the sections. |
+| **Inventory** | `/d/inventory` | A block-game inventory. Projects are items, skills are tools. |
+| **The Table** | `/d/casino` | Green felt and gold trim. Place a bet to open a project. |
+| **Departures** | `/d/departures` | A split-flap flight board. Every project is a destination. |
 
 ### Print and curation
 
-| Design | What it is |
-| --- | --- |
-| **Issue #1** | A comic book with a cover, chapters and panels. Each project is an illustrated chapter with caption boxes and sound effects, over ben-day dots. |
-| **Editorial** | A print magazine: serif display type, asymmetric grid, drop caps, numbered spreads. |
-| **The Broadsheet** | A newspaper front page — masthead, dateline, lead story with a drop cap, then Investigations, Business, Technology and Classifieds. |
-| **The Exhibition** | A gallery with rooms derived from the kind of work. Each project hangs framed under a picture light with a museum plaque. |
-| **The Album** | A streaming album page. Projects are tracks with derived run times, liner notes expand in place, and a now-playing bar follows along. |
+| Design | Route | What it is |
+| --- | --- | --- |
+| **Editorial** | `/d/editorial` | A print magazine that happens to be a portfolio. |
+| **The Broadsheet** | `/d/newspaper` | Your career as a front page. Projects are the day's stories. |
+| **The Exhibition** | `/d/museum` | Projects hung as exhibits. Walk the rooms, read the plaques. |
+| **The Album** | `/d/album` | A record. Projects are tracks; case studies are the liner notes. |
+| **Issue #1** | `/d/comic` | Your career as a comic. Every project gets a chapter. |
 
-## Running it
+## Running it locally
+
+Requires Node 20+.
 
 ```bash
+git clone https://github.com/fahimahmed420/portfolio-list.git
+cd portfolio-list
 npm install
-```
-
-```bash
 npm run dev
 ```
 
-The gallery is at `/`; each design is at `/d/<slug>`.
+Open `http://localhost:3000` for the gallery, or jump straight to any
+design at `/d/<slug>` from the table above.
 
-## How it fits together
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+```
+
+## How to make one your own
+
+Every design in this repo renders the same object: a `Profile`. No design
+hardcodes a name, a project, or a link, so adopting one is a content edit,
+not a design edit.
+
+### The one file you change
+
+Open **`data/profile.ts`** and replace the values. That's the whole job —
+all 21 designs update from it at once.
+
+The person in there now, **Jordan Vale**, is invented. Every link points
+at `example.com`. Replace the name, role, bio, projects, skills,
+experience, education, and links with your own, and every design in the
+gallery will render your real portfolio.
+
+### What the shape expects
+
+`data/types.ts` is the contract. A few fields that aren't obvious:
+
+| Field | Notes |
+| --- | --- |
+| `initials` | Two characters. Used where there's no room for a full name. |
+| `bioShort` | One sentence. Used on tiles and in page `<meta>` descriptions. |
+| `bio` | Long form. Paragraphs are separated by a blank line; keep each paragraph itself on one unbroken line — several designs render this with a CSS rule that turns a stray line break into a real one mid-sentence. |
+| `offbeat` | Light personal detail — a few lines of "off the clock" trivia. Powers Devopoly's REST corner and Editorial's colophon. |
+| `skills[].items[].level` | 1–5. Rendered as stars, bars, or power-ups depending on the design. |
+| `projects[].accent` | A hex color. Becomes the property band, stage glow, card border, or folio marker for that project. Pick colors that are visually distinct from each other. |
+| `projects[].live` / `repo` | Both optional. Every design renders cleanly when a project has neither. |
+
+### Numbers you don't have to write
+
+Several designs are game-shaped — attribute scores, character level, card
+rarity, difficulty ratings, creature types, orbital distance, track run
+times. **None of that lives in the profile.** It's computed in
+`lib/derive.ts` from fields you already filled in, and it's deterministic,
+so the same profile always produces the same numbers.
+
+Two consequences worth knowing:
+
+- Editing `skills[].items[].level` moves the RPG attribute scores, the
+  skill-tree node fills, and the arcade high scores together — one edit,
+  several designs.
+- Giving a project a broader `tech` array or more `highlights` raises its
+  card rarity and difficulty rating. Depth is rewarded; you can't set the
+  rarity directly.
+
+### Sizing
+
+The designs are built against roughly **6 projects** and **5 skill
+groups**. They degrade gracefully outside that range rather than
+breaking:
+
+- Devopoly's board has six project slots and five skill slots; any slot
+  with nothing behind it falls back to a generic tile. Extra projects
+  beyond six stay reachable through the board's own PROJECTS deck, which
+  always lists everything.
+- Fewer than three projects will make the Arcade's stage grid and the
+  Editorial contents page look sparse. That's a content decision, not a
+  layout bug — add more projects or accept the sparser layout.
+
+### Adding a new design
+
+1. Create `designs/<slug>/meta.ts` (a `DesignMeta` — name, pitch,
+   description, tags, palette) and `designs/<slug>/index.tsx` (a
+   default-exported component that takes `{ profile }`).
+2. Add the meta to the array in `designs/registry.ts`.
+3. Add one line to `DESIGNS` in `app/d/[slug]/DesignHost.tsx`.
+
+The gallery card, the route, `generateStaticParams`, and the page
+metadata all follow from the registry automatically.
+
+Two rules keep every design reusable — they're the only ones that matter:
+
+- **Never import `data/profile.ts` from inside a design.** Take the
+  profile as a prop.
+- **Never assume a count.** Loop over whatever you're given, however many
+  projects or skills that turns out to be.
+
+## Project layout
 
 ```
-data/
-  types.ts          the Profile contract — the only coupling between content and design
-  profile.ts        the placeholder person (edit this one)
-designs/
-  registry.ts       metadata only, so the gallery stays light
-  <slug>/meta.ts    how the design describes itself
-  <slug>/index.tsx  the design: ({ profile }) => a whole portfolio
 app/
-  page.tsx          the gallery
-  d/[slug]/         renders one design + shared navigation chrome
+  page.tsx            the gallery
+  d/[slug]/            renders one design behind shared navigation chrome
+  globals.css          theme tokens, print rules, reduced-motion handling
+data/
+  types.ts             the Profile contract — the only coupling between content and design
+  profile.ts           the placeholder person — edit this to make it yours
+designs/
+  registry.ts           single source of truth for which designs exist
+  <slug>/meta.ts        how a design describes itself (name, pitch, tags, palette)
+  <slug>/index.tsx       the design itself: ({ profile }) => a full portfolio page
 components/
-  DesignFrame.tsx   back / prev / next overlay; press H to hide it
-  Poster.tsx        hand-drawn SVG thumbnails for the gallery
+  DesignFrame.tsx        back / prev / next navigation overlay (press H to hide it)
+  Poster.tsx             hand-drawn SVG thumbnails for the gallery cards
+  GalleryGrid.tsx         the filterable card grid on /
 lib/
-  derive.ts         Profile → game numbers: attributes, level, rarity, type
-  usePanZoom.ts     zoom by transform, pan by native scroll
-  useFocusTrap.ts   Escape, Tab containment, focus restore
+  derive.ts             turns profile fields into game-shaped numbers (see above)
+  usePanZoom.ts           pinch-to-zoom / drag-to-pan for canvas-style designs
+  useFocusTrap.ts         accessible modal behavior: focus trap, Escape, restore
+  useSticky.ts            localStorage-backed state for designs with persistent progress
+public/art/               generated illustration assets (WebP, ~2MB total)
+docs/ART-PROMPTS.md       prompts used to generate the art, if you want to make your own
+scripts/                  dev tooling: layout audit, interaction probe, screenshot capture
 ```
-
-`lib/derive.ts` is what keeps the game-shaped designs honest. Attributes, levels,
-rarity, difficulty, card stats and project "types" are all computed from fields
-the Profile already has — nothing is stored twice, and a swapped-in profile gets
-sensible numbers without anyone hand-tuning them. It is deterministic, so the
-same profile always produces the same card rarities and orbits.
-
-Adding a fifth design is a folder, one line in the registry, and one line in
-`DesignHost`. Details in [PLACEHOLDER.md](PLACEHOLDER.md).
 
 ## Notes on the build
 
-- **No image assets.** Every illustration — board icons, tokens, dice, gallery
-  posters — is inline SVG or CSS. The pixel art is authored as character
-  bitmaps in `designs/devopoly/PixelIcons.tsx` and rendered as merged rects.
-- **Fonts** are self-hosted through `next/font`, so there are no runtime
-  requests to Google.
-- **Keyboard.** Board tiles and arcade stages are real buttons; arrow keys walk
-  them, modals trap focus and restore it on close.
-- **Reduced motion** is respected globally, and the dice roll skips its
-  animation entirely rather than just speeding it up.
+- **No image downloads for the base experience.** Every icon, token,
+  poster, and texture that isn't in `public/art/` is inline SVG or CSS —
+  crisp at any zoom, and it recolors itself from `profile.accent`.
+- **Illustrated art is optional and additive.** `public/art/` holds
+  generated backdrops and textures (desk scene, wood grain, felt,
+  parchment, cork, starfield, cabinet art, gallery paintings, comic
+  panels, an album cover, a palette-swapped creature sprite). Every design
+  that uses one still has a working CSS/SVG fallback, so removing
+  `public/art/` doesn't break anything — it just goes back to fully
+  procedural.
+- **Accessible by default.** Board tiles, stage cards, and map markers are
+  real buttons in a keyboard-navigable grid. Modals trap focus, restore it
+  on close, and close on Escape. Every generated SVG icon carries a title
+  or `aria-hidden`. All animation respects `prefers-reduced-motion`.
+- **Print-aware.** The print-styled designs (Editorial, The Broadsheet,
+  The Exhibition) include actual `@media print` rules — floating chrome
+  disappears, backgrounds flatten, and link destinations print alongside
+  the text.
+- **Responsive from 360px up.** Devopoly and Star Map use pan/zoom for
+  their canvas-style boards on small screens; everything else reflows
+  normally.
 
-Built with Next.js 16, React 19, Tailwind v4 and Framer Motion.
+Built with Next.js 16, React 19, Tailwind CSS v4, and Framer Motion.
 
-## Reference
+## License
 
-`docs/reference-devopoly.png` is the art-direction reference the Devopoly board
-was built from.
+No license file is included. If you plan to reuse this code beyond your
+own portfolio, add a license that suits your intent.

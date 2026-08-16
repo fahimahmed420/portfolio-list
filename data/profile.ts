@@ -5,7 +5,7 @@ import type { Profile } from "./types";
  *
  * Jordan Vale is a fictional person (they/them). All links point at example.com.
  * This file is the only thing you edit to adopt one of these designs; see
- * PLACEHOLDER.md at the repo root.
+ * "How to make one your own" in README.md at the repo root.
  *
  * Keep the shape full. Designs are built against a profile with ~6 projects and
  * ~5 skill groups; they degrade gracefully with fewer, but they look their best
